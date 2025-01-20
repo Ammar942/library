@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        margin-bottom: 20px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: rgb(91, 0, 91);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #b200bf;
+      }
+
+      button.btnCancel {
+        background-color: #6c757d;
+        margin-left: 10px;
+      }
+
+      button.btnCancel:hover {
+        background-color: #5a6268;
+      }
+
+      button.btnDelete {
+        background-color: #dc3545;
+      }
+
+      button.btnDelete:hover {
+        background-color: #c82333;
+      }
+      /* .rowEdit {
+        display: flex;
+      } */
+
+      .bookForm {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #8000ff;
+        color: white;
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table tr:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="" id="fstForm">
+      <input
+        class="inp"
+        id="numOfBooks"
+        type="number"
+        placeholder="enter number of books"
+        required
+      />
+      <button class="btn" type="submit">submit</button>
+      <span id="error" style="color: red"></span>
+    </form>
+    <div id="formContain"></div>
+    <script src="task3.js"></script>
+  </body>
+</html>
