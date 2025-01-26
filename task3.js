@@ -188,13 +188,13 @@ function createBookForms(num) {
     inputName.required = true;
 
     const labelPrice = document.createElement("label");
-    labelPrice.innerText = "Book Price: ";
+    labelPrice.innerText = "Book Price :    ";
     const inputPrice = document.createElement("input");
     inputPrice.setAttribute("type", "number");
     inputPrice.required = true;
 
     const labelAuthor = document.createElement("label");
-    labelAuthor.innerText = "Book Author: ";
+    labelAuthor.innerText = "Book Author:";
     const inputAuthor = document.createElement("input");
     inputAuthor.setAttribute("type", "text");
     inputAuthor.required = true;
@@ -259,10 +259,11 @@ function showNextForm() {
         var row = e.target.closest("tr");
         row.className = "rowEdit";
         var tds = row.querySelectorAll("td");
+        console.log(tds[0].innerText);
         row.innerHTML = `
-        <input type="text" id="Nameedited" value=${tds[0].innerText} />
-        <input type="text" id="Priceedited" value=${tds[1].innerText} />
-        <input type="text" id="Authoredited" value=${tds[2].innerText} />
+        <input type="text" id="Nameedited" value="${tds[0].innerText}" />
+        <input type="text" id="Priceedited" value="${tds[1].innerText}" />
+        <input type="text" id="Authoredited" value="${tds[2].innerText}" />
         <button class="btnSave">save</button>
         <button class="btnCancel">cancel</button>
         `;
@@ -289,9 +290,16 @@ function showNextForm() {
           }
         });
       } else if (e.target.className === "btnDelete") {
-        console.log("delete");
+        arr = arr.slice(1);
+        console.log(arr);
+        console.log(arr.length);
         var row = e.target.closest("tr");
         row.remove();
+        if (arr.length === 0) {
+          error.innerHTML = "There is no books To Display";
+          error.style.display = "block";
+          document.body.appendChild(error);
+        }
       }
     });
 

@@ -3,8 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Library</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        background-color: #fdf3ff;
+      }
       form {
         margin-bottom: 20px;
       }
@@ -52,12 +60,9 @@
       button.btnDelete:hover {
         background-color: #c82333;
       }
-      /* .rowEdit {
-        display: flex;
-      } */
 
       .bookForm {
-        background-color: #f8f9fa;
+        background-color: #f8e7ff;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -67,7 +72,6 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
       }
 
       table th,
@@ -89,6 +93,12 @@
       table tr:hover {
         background-color: #ddd;
       }
+      #error {
+        display: none;
+        text-align: center;
+        color: rgb(120, 0, 190);
+        margin-top: 50px;
+      }
     </style>
   </head>
 
@@ -101,8 +111,9 @@
         placeholder="enter number of books"
         required
       />
+
       <button class="btn" type="submit">submit</button>
-      <span id="error" style="color: red"></span>
+      <p id="error">There is no books To Display</p>
     </form>
     <div id="formContain"></div>
     <script src="task3.js"></script>
